@@ -9,50 +9,21 @@ div#bio {
     margin: 0em 30em 0em 2em;
 }
 
-th, td {
+
+.darkmode{
+  background-color: #373a3c;
+  color: white;
+  transition: background-color 1s;
+}
+
+div#bio {
+  margin: 0em 30em 0em 2em;
+}
+
+th,td {
   border: 1px solid black;
 }
+
 table {
   border-collapse: collapse;
-}
-
-div#navbar {
-display: inline-block;
-}
-
-div#navbar ul li {
-  background-color: green;
-  padding 0 1em .3em 1em;
-}
-div#navbar ul li a {
-  font-size: 2em;
-  font-weight: 900;
-  text-decoration: none;
-  color: yellow;
-}
-div#navbar ul {
-list-style-type: none;
-padding-left: 0;
-}
-
-div#hnavbar {
-width: 100%;
-display: inline;
-}
-div#hnavbar ul li a {
-  font-size: 1.1em;
-  font-weight: 900;
-  text-decoration: none;
-  color: yellow;
-}
-div#hnavbar ul {
-list-style-type: none;
-}
-div#hnavbar ul li {
-  background-color: green;
-  text-align: center;
-  display: inline;
-  width: 19%;
-  float: left;
-  margin-right: .5em;
 }

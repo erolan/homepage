@@ -1,64 +1,112 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Eric Roland-CMPS 262</title>
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-<script>/* no javascript here */</script>
-</head>
-<body>
-  <div id="hnavbar">
-    <ul>
-     <li><a href="#home">Home</a></li>
-     <li><a href="#bio">Bio</a></li>
-     <li><a href="#courses">Course List</a></li>
-     <li><a href="#contact">Contact Me</a></li>
-   </div>
-  <br>
-  <br>
-  <div id="navbar">
-    <ul>
-     <li><a href="#home">Home</a></li>
-     <li><a href="#bio">Bio</a></li>
-     <li><a href="#courses">Course List</a></li>
-     <li><a href="#contact">Contact Me</a></li>
-   </div>
-  <h1 id="home">CPMS 262 Homepage</h1>
-  <div id="main">
-  <p>Hello everyone, and thank you for visiting.</p>
-  <p>This is my homepage created for CMPS-262: Advanced Programming at Point Park University</p></div>
-<div id="bio">
-  <h2 id="bio"<>Bio</h2>
-  <p>My name is Eric Roland. I live in the South Hills of Pittsburgh, PA.
-    I have an amazing, and large blended family.
-    I am currently a Junior at Point Park University in the IT program.</p>
-  <p>My interests include:</p>
-    <li>Reading</li>
-    <li>Movies (all kinds, currently on a Marvel kick like the rest of humanity.)</li>
-    <li>Eating and Drinking</li>
-    <li>Learning</li>
-    <li>Football</li>
-    <li>Baseball</li>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Eric Roland-CMPS 262</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="jQuery/jquery-3.1.1.min.js"></script>
+  </head>
+  <script>
+    function showpage(page) {
+      // hide all content
+      $("#main").hide();
+      $("#bio").hide();
+      $("#courses").hide();
+      $("#contact").hide();
+      $("#image").hide();
+      // show the content that was clicked on
+      if (page === 1) {
+        $("#main").show();
+        $("#bio").show();
+        $("#courses").show();
+        $("#contact").show();
+        $("#image").show();
+      } else if (page === 2) {
+        $("#bio").show();
+      } else if (page === 3) {
+        $("#courses").show();
+      } else if (page === 4) {
+        $("#contact").show();
+      }
+    }
+
+    var darkModeEnable = false;
+    $(document).ready(function() {
+      $("#dark").on("click", toggleMode);
+      $("#reset").on("click", reset);
+    });
+
+    function toggleMode() {
+      darkModeEnable = !darkModeEnable;
+      if (darkModeEnable) {
+        $("body").addClass("darkmode");
+      } else {
+        $("body").removeClass("darkmode");
+      }
+    }
+
+    function reset() {
+      $("body").removeClass("darkmode");
+    }
+
+
+  </script>
+
+
+  <body>
+    <div id="banner">
+    <a href="javascript:void(0)" onclick="showpage(1)">Home</a>
+    <a href="javascript:void(0)" onclick="showpage(2)">Bio</a>
+    <a href="javascript:void(0)" onclick="showpage(3)">Course List</a>
+    <a href="javascript:void(0)" onclick="showpage(4)">Contact</a></div>
+    <br>
+    <br>
+  <button id="dark" title="Toggle dark/light mode"> Dark/Light Mode </button>
+    <br>
+    <div id="dark">
+    <p>Click above to toggle in and out of Dark Mode</p> </div>
+    <h1 id="home">CPMS 262 Homepage</h1>
+    <div id="main">
+      <p>Hello everyone, and thank you for visiting.</p>
+      <p>This is my homepage created for CMPS-262: Advanced Programming at Point Park University</p>
     </div>
-  <br>
-  <h2 id="courses">Spring 2019 Courses</h2>
-    <table>
-      <tr>
+    <div id="bio">
+      <h2 id="bio" <>Bio</h2>
+      <p>My name is Eric Roland. I live in the South Hills of Pittsburgh, PA. I have an amazing, and large blended family. I am currently a Junior at Point Park University in the IT program.</p>
+      <p>My interests include:</p>
+      <li>Reading</li>
+      <li>Movies (all kinds, currently on a Marvel kick like the rest of humanity.)</li>
+      <li>Eating and Drinking</li>
+      <li>Learning</li>
+      <li>Football</li>
+      <li>Baseball</li>
+    </div>
+    <br>
+    <div id="courses" <h2 id="courses">Spring 2019 Courses</h2>
+      <table>
+        <tr>
           <th scope="col">Course ID</th>
           <th scope="col">Course Name</th>
-      </tr>
+        </tr>
         <td>CMPS 262</td>
         <td>Advanced Programming</td>
-      </tr>
-      <tr>
-        <td>NSET 110</td>
-        <td>Introduction to the Natural Sciences</td>
-      </tr>
-    </table>
-  <h2 id="contact">Contact Me</h2>
-  <a href="mailto:erolan@pointpark.edu">erolan@pointpark.edu</a>
-  <br>
-  <br>
-   <img src="https://media.licdn.com/dms/image/C5603AQGZzu5Z0t_0wA/profile-displayphoto-shrink_200_200/0?e=1552521600&v=beta&t=hjGGR_InFYrTqwrtByx1IQGkNqnOdjUNGVBhg1Loz_w" align="left" height=200>
-</body>
+        </tr>
+        <tr>
+          <td>NSET 110</td>
+          <td>Introduction to the Natural Sciences</td>
+        </tr>
+      </table>
+    </div>
+    <div id="contact">
+      <h2 id="contact">Contact Me</h2>
+      <a href="mailto:erolan@pointpark.edu">erolan@pointpark.edu</a>
+    </div>
+    <br>
+    <br>
+    <div id="image">
+      <img src="https://media.licdn.com/dms/image/C5603AQGZzu5Z0t_0wA/profile-displayphoto-shrink_200_200/0?e=1552521600&v=beta&t=hjGGR_InFYrTqwrtByx1IQGkNqnOdjUNGVBhg1Loz_w" align="left" height=200>
+    </div>
+  </body>
+
 </html>
